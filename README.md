@@ -1,0 +1,1 @@
+# alr-js-padroes-abordagem-funcional
