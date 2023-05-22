@@ -1,5 +1,6 @@
 import { notasSercive } from "./nota/service.js";
 import './utils/array-helpers.js';
+import { EventEmitter } from "./utils/event-emitter.js";
 import { debounceTime, partialize, pipe, takeUntil } from "./utils/operators.js";
 import { retry, timeoutPromise } from "./utils/promise-helpers.js";
 
@@ -18,7 +19,7 @@ const action = operations(
 				notasSercive.sumItems('2143')
 			) 
 		)
-		.then(console.log)
+		.then(total => EventEmitter.emit('itensTotalizados', total))
 		.catch(console.log)
 )
 
