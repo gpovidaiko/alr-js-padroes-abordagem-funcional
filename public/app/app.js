@@ -1,4 +1,4 @@
-import { notasSercive } from "./nota/service.js";
+import { notasService } from "./nota/service.js";
 import './utils/array-helpers.js';
 import { EventEmitter } from "./utils/event-emitter.js";
 import { debounceTime, partialize, pipe, takeUntil } from "./utils/operators.js";
@@ -16,7 +16,7 @@ const action = operations(
 			() => 
 			timeoutPromise(
 				200, 
-				notasSercive.sumItems('2143')
+				notasService.sumItems('2143')
 			) 
 		)
 		.then(total => EventEmitter.emit('itensTotalizados', total))
